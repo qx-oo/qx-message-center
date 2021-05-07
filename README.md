@@ -45,6 +45,24 @@ celery.py:
         },
     }
 
+### Websocket Usage:
+
+asgi.py:
+
+    application = ProtocolTypeRouter({
+        "http": get_asgi_application(),
+        "websocket": AioAuthMiddleware(
+            URLRouter(
+                qx_ws.routing.websocket_urlpatterns,
+            )
+        ),
+    })
+
+send:
+
+    from qx_ws.client import MessageClient
+    MessageClient().send_msg_to_all({'test': 'ok'})
+
 ### Test:
 
     $ pytest .

@@ -1,0 +1,2 @@
+-e git://github.com/qx-oo/qx-base.git@master#egg=qx-base
+websocket-client==0.59.0

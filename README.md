@@ -47,6 +47,16 @@ celery.py:
 
 ### Websocket Usage:
 
+settings.py:
+
+    INSTALLED_APPS = [
+        ...
+        'channels',
+        'qx_base.qx_core',
+        'qx_ws',
+        ...
+    ]
+
 asgi.py:
 
     application = ProtocolTypeRouter({

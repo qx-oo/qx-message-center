@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'channels',
     'qx_base.qx_core',
     'qx_message',
+    'qx_ws',
     'qx_test.ws',
 ]
 

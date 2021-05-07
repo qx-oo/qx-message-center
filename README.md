@@ -1,4 +1,4 @@
-# qx-user-message
+# qx-message-center
 
 my django project user message center
 
@@ -9,7 +9,7 @@ my django project user message center
 ### Install:
 
     $ pip install -e git://github.com/qx-oo/qx-base.git@1.0.2#egg=qx-base
-    $ pip install -e git://github.com/qx-oo/qx-user-message.git@master#egg=qx-user-message
+    $ pip install -e git://github.com/qx-oo/qx-message-center.git@master#egg=qx-message-center
 
 ### Usage:
 

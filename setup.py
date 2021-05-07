@@ -2,11 +2,11 @@ from setuptools import find_packages, setup
 
 
 setup(
-    name='qx-user-message',
+    name='qx-message-center',
     version='1.0.0',
     author='Shawn',
     author_email='q-x64@live.com',
-    url='https://github.com/qx-oo/qx-user-message/',
+    url='https://github.com/qx-oo/qx-message-center/',
     description='Django user message apps.',
     long_description=open("README.md").read(),
     packages=find_packages(exclude=["qx_test"]),

@@ -58,7 +58,7 @@ asgi.py:
         ),
     })
 
-send:
+Send message:
 
     from qx_ws.client import MessageClient
     MessageClient().send_msg_to_all({'test': 'ok'})

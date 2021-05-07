@@ -18,21 +18,21 @@ class MessageViewSet(viewsets.GenericViewSet,
                      mixins.PostModelMixin,):
     """
     Message
-    ____
-        list:
-            获取消息列表
+    ---
+    list:
+        获取消息列表
 
-            获取消息列表
+        获取消息列表
 
-        update:
-            更新消息
+    update:
+        更新消息
 
-            更新消息
+        更新消息
 
-        update_bulk:
-            批量更新消息
+    update_bulk:
+        批量更新消息
 
-            批量更新消息
+        批量更新消息
     """
 
     permission_classes = (

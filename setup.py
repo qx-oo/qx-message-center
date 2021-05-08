@@ -7,7 +7,7 @@ setup(
     author='Shawn',
     author_email='q-x64@live.com',
     url='https://github.com/qx-oo/qx-message-center/',
-    description='Django user message apps.',
+    description='Django message center apps.',
     long_description=open("README.md").read(),
     packages=find_packages(exclude=["qx_test"]),
     install_requires=[

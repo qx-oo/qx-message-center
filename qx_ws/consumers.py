@@ -1,11 +1,4 @@
 from channels.generic.websocket import AsyncJsonWebsocketConsumer
-from django.conf import settings
-
-
-try:
-    ws_auth = settings.QX_MESSAGECENTER_SETTINGS.get('ws_auth', True)
-except AttributeError:
-    ws_auth = False
 
 
 class MessageConsumer(AsyncJsonWebsocketConsumer):
@@ -14,7 +7,7 @@ class MessageConsumer(AsyncJsonWebsocketConsumer):
         self.group_list = [
             'global',
         ]
-        if ws_auth and self.scope['user'].is_authenticated:
+        if self.scope['user'].is_authenticated:
             self.group_list.append('login')
             self.group_list.append('user_{}'.format(self.scope['user'].id))
         else:

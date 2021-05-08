@@ -1,5 +1,5 @@
 import json
-from celery.task import Task
+from qx_base.qx_core.tasks import Task
 from qx_ws.client import MessageClient
 from .settings import messagecenter_settings
 from .models import Message

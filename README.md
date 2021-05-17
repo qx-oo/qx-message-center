@@ -41,15 +41,7 @@ celery.py:
 
     app.conf.task_routes = {
         ...
-        'qx_message.tasks.SendMessage': {
-            'queue': 'default',
-        },
-    }
-
-celery.py:
-
-    app.conf.task_routes = {
-        'qx_message.tasks.SendMessage': {
+        'qx_message.tasks.sendmessage_task': {
             'queue': 'default',
         },
     }

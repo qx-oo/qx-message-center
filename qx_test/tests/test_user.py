@@ -3,7 +3,7 @@ import json
 from django.contrib.auth import get_user_model
 from django.views.decorators.csrf import csrf_exempt
 from qx_message.models import Message
-from qx_message.tasks import SendMessage
+from qx_message.tasks import sendmessage_task
 from qx_message.viewsets import MessageViewSet
 from rest_framework.test import force_authenticate
 
@@ -19,10 +19,10 @@ class TestMessage:
         user1 = User.objects.create(username="test1")
         user2 = User.objects.create(username="test2")
         user3 = User.objects.create(username="test3")
-        SendMessage().run('user', user1.id, user1.id,
-                          user2.id, detail=json.dumps({"title": "hello"}))
-        SendMessage().run('test', None, user3.id,
-                          user2.id, detail=json.dumps({"title": "hello"}))
+        sendmessage_task.run('user', user1.id, user1.id,
+                             user2.id, detail=json.dumps({"title": "hello"}))
+        sendmessage_task.run('test', None, user3.id,
+                             user2.id, detail=json.dumps({"title": "hello"}))
         message_list = list(Message.objects.filter(user_id=user2.id))
         assert len(message_list) > 1
 
